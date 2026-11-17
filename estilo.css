@@ -1,0 +1,96 @@
+body {
+    background-color: #f0e5ff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+.nav{
+    display: flex;
+}
+.lobasico{
+color: #4b1c71;
+text-align: center;
+}
+header {
+    background-color:   #4b1c71;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+h1 {
+    font-size: 40px;
+}
+.contenedor {
+    background-color: white;
+    width: 80%;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #9d4edd;
+}
+h2 {
+    color: #7b2cbf;
+}
+section {
+    background-color: #ddccf7;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+.formula {
+    text-align: center;
+    font-size: 28px;
+    color: #5a189a;
+    font-weight: bold;
+}
+button {
+    background-color: #9d4edd;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #7b2cbf;
+}
+footer {
+    background-color:  #4b1c71;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+.contenedor-imagen {
+    display: flex;
+    justify-content: center; 
+      
+}
+.okey{
+    display: flex;
+    justify-content: center; 
+      gap: 10px;
+}
+.lol{
+     display: flex;
+    justify-content: center; 
+}
+.wow{
+    display: flex;
+    justify-content: center;
+}
+.tabla{
+     display: flex;
+    justify-content: center;
+}
+.ya{
+     display: flex;
+    justify-content: center;
+}
+.me{
+     display: flex;
+    justify-content: center;
+}
+.canse{
+    display: flex;
+    justify-content: center;
+}
