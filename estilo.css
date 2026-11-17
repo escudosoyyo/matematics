@@ -1,47 +1,67 @@
+/* 1. Asegura que el padding no agrande el ancho de las cajas */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #f0e5ff;
     font-family: Arial, sans-serif;
     margin: 0;
 }
-.nav{
+
+.nav {
     display: flex;
+    flex-wrap: wrap; /* Permite que los botones/enlaces bajen si no entran en el celular */
+    justify-content: center;
+    gap: 10px;
 }
-.lobasico{
-color: #4b1c71;
-text-align: center;
+
+.lobasico {
+    color: #4b1c71;
+    text-align: center;
 }
+
 header {
-    background-color:   #4b1c71;
+    background-color: #4b1c71;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 30px 15px;
 }
+
 h1 {
     font-size: 40px;
+    margin: 0;
 }
+
 .contenedor {
     background-color: white;
-    width: 80%;
+    width: 90%;
+    max-width: 1000px; /* Evita que en monitores gigantes se estire demasiado */
     margin: 30px auto;
     padding: 25px;
     border-radius: 20px;
     border: 1px solid #9d4edd;
 }
+
 h2 {
     color: #7b2cbf;
 }
+
 section {
     background-color: #ddccf7;
     padding: 15px;
     margin: 20px 0;
     border-radius: 10px;
 }
+
 .formula {
     text-align: center;
     font-size: 28px;
     color: #5a189a;
     font-weight: bold;
+    overflow-wrap: break-word; /* Evita que una fórmula muy larga rompa la caja */
 }
+
 button {
     background-color: #9d4edd;
     color: white;
@@ -49,48 +69,70 @@ button {
     padding: 12px 25px;
     border-radius: 10px;
     font-size: 16px;
+    cursor: pointer;
 }
+
 button:hover {
     background-color: #7b2cbf;
 }
+
 footer {
-    background-color:  #4b1c71;
+    background-color: #4b1c71;
     color: white;
     text-align: center;
     padding: 15px;
     margin-top: 40px;
 }
-.contenedor-imagen {
-    display: flex;
-    justify-content: center; 
-      
+
+/* 2. Regla vital: ninguna imagen puede ser más ancha que su caja */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
-.okey{
-    display: flex;
-    justify-content: center; 
-      gap: 10px;
-}
-.lol{
-     display: flex;
-    justify-content: center; 
-}
-.wow{
-    display: flex;
-    justify-content: center;
-}
-.tabla{
-     display: flex;
-    justify-content: center;
-}
-.ya{
-     display: flex;
-    justify-content: center;
-}
-.me{
-     display: flex;
-    justify-content: center;
-}
-.canse{
+
+/* 3. Agrupamos todas tus clases que hacían lo mismo para limpiar el código */
+.contenedor-imagen,
+.okey,
+.lol,
+.wow,
+.tabla,
+.ya,
+.me,
+.canse {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Si hay dos elementos lado a lado, en celular se ponen uno abajo del otro */
+    gap: 10px;
+}
+
+/* Si tienes una etiqueta <table> adentro de .tabla, esto evita que rompa el celular */
+.tabla {
+    overflow-x: auto; 
+}
+
+/* 4. AJUSTES EXCLUSIVOS PARA CELULARES (pantallas menores a 600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 26px; /* Título más chico para que no ocupe media pantalla */
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .contenedor {
+        width: 95%; /* Aprovecha mejor el ancho del celular */
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .formula {
+        font-size: 20px; /* Achica las fórmulas para que entren en una sola línea */
+    }
+
+    button {
+        width: 100%; /* Los botones ocupan todo el ancho para tocarlos fácil con el dedo */
+        margin-bottom: 5px;
+    }
 }
